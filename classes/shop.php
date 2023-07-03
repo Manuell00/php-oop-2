@@ -27,7 +27,7 @@ class Shop
         }
     }
 
-    public function salvaECaricaSuFileJson($arrayDaCaricare, $nomeFile)
+    public function salvaECaricaSuFileJson($nomeFile)
     {
         // Carica i dati dal file
         if (file_exists($nomeFile)) {
@@ -36,7 +36,7 @@ class Shop
         }
 
         // Sovrascrive i dati nel file
-        $data = json_encode($arrayDaCaricare);
+        $data = json_encode($this->prodotti);
         file_put_contents($nomeFile, $data);
     }
 }
