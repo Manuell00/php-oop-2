@@ -26,17 +26,4 @@ class Shop
             unset($this->prodotti[$index]);
         }
     }
-
-    public function salvaECaricaSuFileJson($nomeFile)
-    {
-        // Carica i dati dal file
-        if (file_exists($nomeFile)) {
-            $data = file_get_contents($nomeFile);
-            $this->prodotti = json_decode($data);
-        }
-
-        // Sovrascrive i dati nel file
-        $data = json_encode($this->prodotti);
-        file_put_contents($nomeFile, $data);
-    }
 }

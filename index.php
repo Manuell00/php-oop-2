@@ -4,10 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
+    <title>Pet Shop</title>
 </head>
 
 <body>
+
+    <!-- Utilizzo un tipo di scrittura php in modo che il tag si chiuda prima del mio tah html e lo riapro inernamente ad esso ogni volta che mi serve -->
     <?php
     require_once("data/db.php");
 
@@ -21,25 +23,26 @@
         <!-- Stampo la card -->
         <div class="product-card">
             <img src="<?php echo $prodotto->immagine; ?>" alt="Immagine Prodotto" width="200">
-            <h3><?php echo $prodotto->titolo; ?></h3>
-            <p><strong>Prezzo: </strong><?php echo $prodotto->prezzo; ?>€</p>
-            <p><strong>Categoria: </strong><?php echo $prodotto->categoria; ?></p>
-            <p><strong>Tipo: </strong><?php echo $prodotto->tipo; ?></p>
-            <?php
-            // Verifica il tipo di prodotto e mostra l'attributo specifico
-            if ($prodotto instanceof Cibo) {
-                echo "<p><strong>Attributo specifico: </strong>{$prodotto->attributo_specifico}</p>";
-            } elseif ($prodotto instanceof Gioco) {
-                echo "<p><strong>Attributo specifico: </strong>{$prodotto->attributo_specifico}</p>";
-            } elseif ($prodotto instanceof Cuccia) {
-                echo "<p><strong>Attributo specifico: </strong>{$prodotto->attributo_specifico}</p>";
-            }
-            ?>
-            <button>Aggiungi al carrello</button>
+            <h2><?php echo $prodotto->titolo; ?></h3>
+                <p><strong>Prezzo: </strong><?php echo $prodotto->prezzo; ?>€</p>
+                <p><strong>Categoria: </strong><?php echo $prodotto->categoria; ?></p>
+                <p><strong>Tipo: </strong><?php echo $prodotto->tipo; ?></p>
+                <?php
+                // Verifica il tipo di prodotto e mostra l'attributo specifico
+                if ($prodotto instanceof Cibo) {
+                    echo "<p><strong>Attributo specifico: </strong>{$prodotto->attributo_specifico}</p>";
+                } elseif ($prodotto instanceof Gioco) {
+                    echo "<p><strong>Attributo specifico: </strong>{$prodotto->attributo_specifico}</p>";
+                } elseif ($prodotto instanceof Cuccia) {
+                    echo "<p><strong>Attributo specifico: </strong>{$prodotto->attributo_specifico}</p>";
+                }
+                ?>
+                <button>Aggiungi al carrello</button>
         </div>
     <?php
     }
     ?>
+
 
     <!-- STYLE -->
     <style>
