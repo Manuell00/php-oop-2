@@ -1,11 +1,12 @@
 <?php
 
-require_once __DIR__ . '/../classes/prodotto.php';
-require_once __DIR__ . '/../classes/categoria.php';
+require_once __DIR__ . '/../classes/product.php';
+require_once __DIR__ . '/../classes/category.php';
 require_once __DIR__ . '/../classes/cibo.php';
 require_once __DIR__ . '/../classes/gioco.php';
 require_once __DIR__ . '/../classes/cuccia.php';
 require_once __DIR__ . '/../classes/shop.php';
+
 
 
 // Creare le istanze dei prodotti, categorie e dello shop
@@ -22,8 +23,5 @@ $shop->aggiungiProdotto($prodotto2);
 $shop->aggiungiProdotto($prodotto3);
 
 // Specifico il percorso di scrittura per il metodo salvaECaricaSuFileJson
-$data = "data.json";
+$data = "../data/data.json";
 $shop->salvaECaricaSuFileJson($data);
-
-
-var_dump($prodotto1);
